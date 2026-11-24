@@ -1,0 +1,93 @@
+/* ---------- additions for the MCP course ---------- */
+.layout{grid-template-columns:250px minmax(0,1fr) 320px}
+.tabs .tab{padding:5px 11px}
+/* JSON drawer inside the stage */
+.drawer{border-top:1.5px solid var(--ink);background:var(--panel);max-height:44%;overflow:auto;padding:10px 12px 12px;position:relative;z-index:2}
+.drawer.hide{display:none}
+.msg{margin-bottom:10px}
+.msg:last-child{margin-bottom:0}
+.msghd{display:flex;gap:8px;align-items:center;margin-bottom:4px;font-size:11.5px;flex-wrap:wrap}
+.dirchip{border:1.5px solid var(--ink);border-radius:999px;padding:0 9px;font-weight:700;background:var(--panel2)}
+.dirchip.req{background:#fde3d3} .dirchip.res{background:var(--green)} .dirchip.note{background:var(--purple)} .dirchip.err{background:var(--red)} .dirchip.http{background:var(--blue)}
+:root[data-theme="dark"] .dirchip.req{background:#5a3420}
+.msghd .nt{color:var(--muted)}
+pre.json{margin:0;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:12px/1.5 var(--mono);white-space:pre-wrap;word-break:break-word}
+.j-k{color:#7a3fb0} .j-s{color:#2f7a3a} .j-n{color:#b4561b} .j-b{color:#2c5ea8} .j-c{color:var(--muted)}
+:root[data-theme="dark"] .j-k{color:#d2b4ff} :root[data-theme="dark"] .j-s{color:#a8e0a0} :root[data-theme="dark"] .j-n{color:#ffb27a} :root[data-theme="dark"] .j-b{color:#9cc3ff}
+.sbtn.on{background:var(--green)}
+/* inline quiz */
+.quiz{border:1.5px solid var(--ink);border-radius:12px;padding:10px 12px;margin:6px 0 12px;background:var(--panel2);box-shadow:2px 2px 0 var(--shadow)}
+.quiz .qh{font-size:10.5px;letter-spacing:.07em;font-weight:800;color:var(--blue-ink);margin-bottom:4px}
+.quiz .qq{font-weight:700;margin-bottom:8px}
+.opt{all:unset;cursor:pointer;display:block;box-sizing:border-box;width:100%;border:1.5px solid var(--line);border-radius:9px;padding:6px 10px;margin:5px 0;background:var(--panel);font-size:12.5px}
+.opt:hover{border-color:var(--ink)}
+.opt.right{background:var(--green);border-color:var(--green-ink)}
+.opt.wrong{background:var(--red);border-color:var(--red-ink)}
+.opt[disabled]{cursor:default}
+.why{margin-top:8px;font-size:12.5px}
+.why b{color:var(--green-ink)} .why.bad b{color:var(--red-ink)}
+/* glossary terms */
+.gl{border-bottom:1.5px dotted var(--purple-ink);cursor:help;position:relative}
+.gl:hover::after,.gl:focus::after{content:attr(data-def);position:absolute;left:0;top:calc(100% + 6px);z-index:30;width:260px;background:var(--ink);color:var(--bg);font:12px/1.45 var(--mono);padding:8px 10px;border-radius:8px;white-space:normal;box-shadow:3px 3px 0 rgba(0,0,0,.2)}
+/* zones on the floor */
+.zone{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-dasharray:7 6;opacity:.55}
+.zonelbl rect{fill:var(--panel2);stroke:var(--ink);stroke-width:1.5}
+.zonelbl text{font:800 12px var(--mono);fill:var(--ink)}
+.flow.err{stroke:var(--red-ink)}
+.dot.err{fill:var(--red-ink);stroke:var(--ink);stroke-width:1.5}
+.progress .sub2{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:6px}
+/* playground */
+.pg{grid-column:2 / 4;display:grid;grid-template-columns:340px minmax(0,1fr);gap:12px;min-height:0}
+.pg .card{padding:12px 14px;overflow:auto}
+.pg h2{font-size:15px;margin:0 0 4px}
+.pg .lead{color:var(--muted);font-size:12px;margin:0 0 10px}
+.pg fieldset{border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin:0 0 10px}
+.pg legend{font-size:10.5px;letter-spacing:.07em;font-weight:800;color:var(--muted);padding:0 4px}
+.pg label.row{display:flex;gap:8px;align-items:center;margin:4px 0;font-size:12.5px;cursor:pointer}
+.pg select,.pg input[type=text]{font:12.5px var(--mono);border:1.5px solid var(--ink);border-radius:7px;padding:2px 6px;background:var(--panel2);color:var(--ink)}
+.pg input[type=text]{width:100%}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.act{all:unset;cursor:pointer;border:1.5px solid var(--ink);border-radius:8px;padding:5px 8px;background:var(--panel2);box-shadow:1.5px 1.5px 0 var(--shadow);font-size:11.5px;font-weight:600;text-align:left;line-height:1.3}
+.act small{display:block;font-weight:400;color:var(--muted);font-size:10.5px}
+.act:active{transform:translate(1px,1px);box-shadow:none}
+.act.wide{grid-column:1 / 3}
+.act.pulse{animation:pulse 1.2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(224,120,60,.7)}50%{box-shadow:0 0 0 6px rgba(224,120,60,0)}}
+.act[disabled]{opacity:.35;pointer-events:none}
+.log{display:flex;flex-direction:column;gap:10px}
+.entry{border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--panel2)}
+.entry .explain{margin-top:8px;border-left:3px solid var(--purple-ink);padding:4px 10px;background:var(--purple);border-radius:0 8px 8px 0;font-size:12.5px}
+.entry .explain.bad{border-left-color:var(--red-ink);background:var(--red)}
+.entry .explain.good{border-left-color:var(--green-ink);background:var(--green)}
+.empty{color:var(--muted);text-align:center;padding:40px 10px}
+.mission{display:flex;gap:10px;align-items:flex-start;margin:6px 0}
+.mission button{all:unset;cursor:pointer;flex:0 0 auto;font-size:11px;border:1.5px solid var(--ink);border-radius:6px;padding:1px 7px;background:var(--green);white-space:nowrap}
+.gloss dt{font-weight:800;margin-top:10px}
+.gloss dd{margin:2px 0 0 0;color:var(--ink)}
+@media (max-width:1180px){ .pg{grid-column:1 / 3} .layout{grid-template-columns:minmax(0,1fr) 300px} }
+@media (max-width:860px){ .pg{grid-column:1;grid-template-columns:1fr} .tabs .tl{display:none} }
+
+.ficon{flex:0 0 18px}
+.folder{overflow:hidden;text-overflow:ellipsis}
+.acts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.act{min-width:0;overflow-wrap:anywhere}
+.drawer{max-height:36%}
+/* ---- visible scrollbars + "more below" hints (macOS hides scrollbars by default) ---- */
+.tree,.body,.drawer,.page,.pg .card,.learn,.timeline .steps{scrollbar-width:thin;scrollbar-color:var(--soft) transparent}
+.tree::-webkit-scrollbar,.body::-webkit-scrollbar,.drawer::-webkit-scrollbar,.page::-webkit-scrollbar,.pg .card::-webkit-scrollbar,.learn::-webkit-scrollbar,pre.json::-webkit-scrollbar,.timeline .steps::-webkit-scrollbar{width:9px;height:9px}
+.tree::-webkit-scrollbar-thumb,.body::-webkit-scrollbar-thumb,.drawer::-webkit-scrollbar-thumb,.page::-webkit-scrollbar-thumb,.pg .card::-webkit-scrollbar-thumb,.learn::-webkit-scrollbar-thumb,pre.json::-webkit-scrollbar-thumb,.timeline .steps::-webkit-scrollbar-thumb{background:var(--soft);border-radius:9px;border:2px solid transparent;background-clip:content-box}
+.tree::-webkit-scrollbar-track,.body::-webkit-scrollbar-track,.drawer::-webkit-scrollbar-track,.page::-webkit-scrollbar-track,.pg .card::-webkit-scrollbar-track,.learn::-webkit-scrollbar-track,pre.json::-webkit-scrollbar-track{background:var(--line);border-radius:9px}
+.more::after{content:"↓ scroll for more";position:sticky;bottom:0;display:block;text-align:center;font:700 11px var(--mono);color:var(--ink);padding:14px 0 4px;margin-top:-18px;background:linear-gradient(to bottom,transparent,var(--panel) 55%);pointer-events:none}
+.learn{max-height:34vh;overflow:auto}
+.folder{white-space:normal;line-height:1.3;overflow:visible;text-overflow:clip}
+.folder .cnt{flex:0 0 auto}
+.lesson{line-height:1.35}
+.timeline .steps{overflow-x:auto;padding-bottom:4px}
+.st{min-width:62px}
+.st span{white-space:normal;overflow:visible;text-overflow:clip;text-align:center;line-height:1.2;max-width:84px}
+.body code,.stepcard code{overflow-wrap:anywhere}
+.metric .v{white-space:normal;overflow-wrap:anywhere}
+.lessonhead h1,.lessonhead p{overflow-wrap:anywhere}
+pre.json{overflow:auto;max-width:100%}
+td code{overflow-wrap:anywhere}
+.pc{overflow-x:auto}

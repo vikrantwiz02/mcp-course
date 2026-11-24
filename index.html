@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MCP, Visually</title>
+<meta name="description" content="An interactive, visual course on the Model Context Protocol (spec 2026-07-28), from first principles to authorization and security.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27M12 2 21 7v10l-9 5-9-5V7z%27 fill=%27%23ece0fa%27 stroke=%27%231f1a17%27 stroke-width=%271.8%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M12 12 21 7M12 12 3 7M12 12v10%27 stroke=%27%231f1a17%27 stroke-width=%271.8%27 fill=%27none%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="extra.css">
+<script>try{var t=JSON.parse(localStorage.getItem('mcp-course:theme'));if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<div class="top">
+  <div class="logo"><svg class="mark" viewBox="0 0 24 24"><path d="M12 2 21 7v10l-9 5-9-5V7z" fill="var(--purple-1)" stroke="var(--ink)" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 12 21 7M12 12 3 7M12 12v10" stroke="var(--ink)" stroke-width="1.8"/></svg><span>MCP <em>Visually</em></span></div>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" data-view="learn">📖 <span class="tl">Learn</span></button>
+    <button class="tab" role="tab" data-view="play">▶ <span class="tl">Playground</span></button>
+    <button class="tab" role="tab" data-view="practice">✓ <span class="tl">Missions</span></button>
+    <button class="tab" role="tab" data-view="cheat">▦ <span class="tl">Cheatsheet</span></button>
+    <button class="tab" role="tab" data-view="glossary">Aa <span class="tl">Glossary</span></button>
+  </div>
+  <div class="spacer"></div>
+  <span class="chip" title="Every fact in this course comes from this spec version">spec 2026-07-28</span>
+  <button class="iconbtn" id="theme" title="Toggle dark mode">◐</button>
+</div>
+<div class="layout" id="layout"></div>
+
+<script src="engine.js"></script>
+<script src="content/01-foundations.js"></script>
+<script src="content/02-messages.js"></script>
+<script src="content/03-transports-tools.js"></script>
+<script src="content/04-resources-patterns.js"></script>
+<script src="content/05-auth-security.js"></script>
+<script src="content/06-reference.js"></script>
+<script src="playground.js"></script>
+<script>COURSE_BOOT();</script>
+</body>
+</html>
